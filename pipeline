@@ -1,0 +1,12 @@
+node{
+stage ( 'SCM chekout ') {
+    git credentialsId: 'git-hub', url: 'https://github.com/Vasanth3g/myrepo'
+  }
+stage ( 'Maven Package ') {
+    def mvnHome = tool name: 'maven', type: 'maven'
+    def mvnCMD = "${mvnHome}/bin/mvn"
+
+     sh "$mvnCMD clean package"
+   }
+
+}

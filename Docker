@@ -1,0 +1,25 @@
+FROM centos:6.9
+LABEL maintainer vasanth.m@evolutiondigital.com
+#RUN yum install update -y
+RUN yum install httpd wget zip unzip php php-mysql php-mbstring php-mcrypt curl pip soap php-devel  cakephp -y
+# MYSQL
+RUN yum install -y mysql mysql-server
+RUN service mysqld start
+RUN mkdir -p /tmp/softwares
+WORKDIR /var/www/html
+RUN wget http://192.168.1.21/ams.zip && unzip ams.zip
+RUN wget http://192.168.1.21/idemand4u.zip && unzip idemand4u.zip
+RUN chgrp apache -R ams
+RUN chgrp apache -R idemand4u
+WORKDIR /var/lib/mysql
+RUN wget http://192.168.1.21/idemand4u_test.zip && unzip idemand4u_test.zip
+RUN wget http://192.168.1.21/idemand4u_db.zip && unzip idemand4u_db.zip
+
+RUN chgrp mysql -R idemand4u_ams
+RUN chgrp mysql -R idemand4u
+
+CMD service mysqld start
+COPY /root/script.sh /script.sh
+RUN chmod -x script.sh
+ENTRYPOINT ["/usr/sbin/apachectl", "-D", "FOREGROUND", ./script.sh]
+EXPOSE 80

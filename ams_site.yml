@@ -1,0 +1,19 @@
+---
+ apiVersion: extensions/v1beta1
+ kind: Deployment
+ metadata:
+   name: ams
+ spec:
+   replicas: 2
+   template:
+     metadata:
+       labels:
+         app: ams
+     spec:
+       containers:
+         - name: ams
+           image: vasanth3g/application
+           ports:
+             - containerPort: 80
+       imagePullSecrets:
+         - name: regcred

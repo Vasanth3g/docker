@@ -1,0 +1,23 @@
+#sample format of yaml
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: application
+  labels:
+    app: web
+    environment: production
+    tier: frontend
+spec:
+   replicas: 2
+   template:
+     metadata:
+       labels:
+         app: web
+spec:
+  containers:
+    - name: front-end
+      image: httpd
+      ports:
+        replicas: 3
+        - containerPort: 80
