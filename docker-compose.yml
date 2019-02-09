@@ -13,7 +13,7 @@ services:
     volumes:
      - ./db/:/var/lib/mysql
     environment:
-        MYSQL_ROOT_PASSWORD: Ev0den!!
+        MYSQL_ROOT_PASSWORD: password
         MYSQL_USER: root
         MYSQL_PASSWORD: admin123
         MYSQL_DATABASE: idemand4u_ams
