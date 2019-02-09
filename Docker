@@ -7,8 +7,8 @@ RUN yum install -y mysql mysql-server
 RUN service mysqld start
 RUN mkdir -p /tmp/softwares
 WORKDIR /var/www/html
-RUN wget http://192.168.1.21/ams.zip && unzip ddd.zip
-RUN wget http://192.168.1.21/idemand4u.zip && unzip mmmmm.zip
+RUN wget http://192.168.1.21/ddd.zip && unzip ddd.zip
+RUN wget http://192.168.1.21/mmmmm.zip && unzip mmmmm.zip
 RUN chgrp apache -R ddd
 RUN chgrp apache -R mmmmm
 WORKDIR /var/lib/mysql
