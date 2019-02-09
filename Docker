@@ -7,16 +7,16 @@ RUN yum install -y mysql mysql-server
 RUN service mysqld start
 RUN mkdir -p /tmp/softwares
 WORKDIR /var/www/html
-RUN wget http://192.168.1.21/ams.zip && unzip ams.zip
-RUN wget http://192.168.1.21/idemand4u.zip && unzip idemand4u.zip
-RUN chgrp apache -R ams
-RUN chgrp apache -R idemand4u
+RUN wget http://192.168.1.21/ams.zip && unzip ddd.zip
+RUN wget http://192.168.1.21/idemand4u.zip && unzip mmmmm.zip
+RUN chgrp apache -R ddd
+RUN chgrp apache -R mmmmm
 WORKDIR /var/lib/mysql
-RUN wget http://192.168.1.21/idemand4u_test.zip && unzip idemand4u_test.zip
-RUN wget http://192.168.1.21/idemand4u_db.zip && unzip idemand4u_db.zip
+RUN wget http://x.x.x.x/ccccc_test.zip && unzip ccccc_test.zip
+RUN wget http://x.x.x.x/eeeeee_db.zip && unzip eeeeee_db.zip
 
-RUN chgrp mysql -R idemand4u_ams
-RUN chgrp mysql -R idemand4u
+RUN chgrp mysql -R ccccc_test
+RUN chgrp mysql -R eeeeee_db
 
 CMD service mysqld start
 COPY /root/script.sh /script.sh
