@@ -2,16 +2,16 @@
  apiVersion: extensions/v1beta1
  kind: Deployment
  metadata:
-   name: ams
+   name: ccc
  spec:
    replicas: 2
    template:
      metadata:
        labels:
-         app: ams
+         app: ccc
      spec:
        containers:
-         - name: ams
+         - name: ccc
            image: vasanth3g/application
            ports:
              - containerPort: 80
