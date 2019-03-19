@@ -1,5 +1,5 @@
 FROM centos:6.9
-LABEL maintainer vasanth.m@evolutiondigital.com
+LABEL maintainer vasanth3g@gmail.com
 #RUN yum install update -y
 RUN yum install httpd wget zip unzip php php-mysql php-mbstring php-mcrypt curl pip soap php-devel  cakephp -y
 # MYSQL
